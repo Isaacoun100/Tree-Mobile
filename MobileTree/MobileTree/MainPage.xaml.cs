@@ -21,8 +21,11 @@ namespace MobileTree
 
         public void Ejemplo_Clicked(object sender, EventArgs e)
         {
-            BinaryTree.Add(int.Parse(entry1.Text));
-            label1.Text = BinaryTree.toString();
+            if (entry1.Text != null)
+            {
+                BinaryTree.Add(int.Parse(entry1.Text));
+                label1.Text = BinaryTree.toString();
+            }
         }
 
         public void post_Clicked(object sender, EventArgs e)
@@ -42,9 +45,20 @@ namespace MobileTree
             label1.Text = BinaryTree.TraverseInOrder();
         }
 
+        public void Clear(object sender, EventArgs e)
+        {
+            BinaryTree.clear();
+            label1.Text = "Please add a node or toggle random mode";
+        }
+
         public void RandomMode(object sender, EventArgs e)
         {
-
+            if (entry1.Text != null)
+            {
+                BinaryTree.AddRandom(int.Parse(entry1.Text));
+                label1.Text = BinaryTree.toString();
+            }
+                
         }
 
     }

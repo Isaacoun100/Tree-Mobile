@@ -10,6 +10,10 @@ namespace MobileTree.Data_Structures
 
         public static Node Root { get; set; }
 
+        public static void clear()
+        {
+            Root = null;
+        }
         
         public static void AddRandom(int n){
             for(int i = 0; i < n; i++){

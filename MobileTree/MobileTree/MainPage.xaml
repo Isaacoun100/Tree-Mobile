@@ -25,11 +25,12 @@
             </Frame>
             
             <Entry x:Name="entry1" Placeholder="Please write a number" Keyboard="Numeric" />
-            <Button x:Name="random" Text="Random" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="RandomMode" />
-            <Button x:Name="add" Text="Add new node" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="Ejemplo_Clicked" />
+            <Button x:Name="random" Text="Random" WidthRequest="100" HeightRequest="40"  BackgroundColor="Aqua" Clicked="RandomMode" />
+            <Button x:Name="add" Text="Add new node" WidthRequest="100" HeightRequest="40"  BackgroundColor="Aqua" Clicked="Ejemplo_Clicked" />
+            <Button x:Name="clear" Text="clear" WidthRequest="100" HeightRequest="40"  BackgroundColor="Aqua" Clicked="Clear" />
 
 
-        </StackLayout>
+            </StackLayout>
 
     </StackLayout>
         
