@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileTree.Data_Structures;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -20,8 +21,12 @@ namespace MobileTree
 
         public void Ejemplo_Clicked(object sender, EventArgs e)
         {
-            label1.Text = entry1.Text;
-            escribir.Text = entry1.Text;
+            BinaryTree.Add(7);
+            BinaryTree.Add(8);
+            BinaryTree.Add(6);
+            BinaryTree.Add(9);
+            BinaryTree.Add(5);
+            label1.Text = BinaryTree.toString();
         }
 
         public void post_Clicked(object sender, EventArgs e)

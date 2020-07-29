@@ -8,11 +8,12 @@ namespace MobileTree.Data_Structures
     class BinaryTree
     {
 
-        public Node Root { get; set; }
+        public static Node Root { get; set; }
 
-        public bool Add(int value)
+        public static bool Add(int value)
         {
-            Node before = null, after = this.Root;
+            Node before = null; 
+            Node after = Root;
 
             while (after != null)
             {
@@ -22,10 +23,12 @@ namespace MobileTree.Data_Structures
                 else return false;
             }
 
-            Node newNode = new Node();
-            newNode.Data = value;
+            Node newNode = new Node
+            {
+                Data = value
+            };
 
-            if (this.Root == null) this.Root = newNode;
+            if (Root == null) Root = newNode;
             else
             {
                 if (value < before.Data) before.Left = newNode;
@@ -36,12 +39,12 @@ namespace MobileTree.Data_Structures
         }
         
 
-        public Node Find(int value)
+        public static Node Find(int value)
         {
-            return this.Find(value, this.Root);
+            return Find(value, Root);
         }
 
-        private Node Find(int value, Node root)
+        private static Node Find(int value, Node root)
         {
             if(root.Data == value) return root;
             if(root.Right != null) Find(value, root.Right);
@@ -49,14 +52,14 @@ namespace MobileTree.Data_Structures
             return null;
         }
 
-        private int MinValue(Node node)
+        private static int MinValue(Node node)
         {
             int minv = node.Data;
  
-            while (node.LeftNode != null)
+            while (node.Left != null)
             {
-                minv = node.LeftNode.Data;
-                node = node.LeftNode;
+                minv = node.Left.Data;
+                node = node.Left;
             }
 
             return minv;
@@ -64,10 +67,10 @@ namespace MobileTree.Data_Structures
 
         public void Remove(int value)
         {
-            this.Root = Remove(this.Root, value);
+            Root = Remove(Root, value);
         }
 
-        private Node Remove(Node parent, int key)
+        private static Node Remove(Node parent, int key)
         {
 
             if(parent==null) return parent;
@@ -76,8 +79,8 @@ namespace MobileTree.Data_Structures
             else if (key>parent.Data) parent.Right = Remove(parent.Right, key);
             else
             {
-                if (parent.LeftNode == null) return parent.RightNode;
-                else if (parent.RightNode == null) return parent.LeftNode;
+                if (parent.Left == null) return parent.Right;
+                else if (parent.Right == null) return parent.Left;
 
                 parent.Data=MinValue(parent.Right);
                 parent.Right=Remove(parent.Right, parent.Data);
@@ -85,58 +88,81 @@ namespace MobileTree.Data_Structures
             return parent;
         }
 
-        public String TraversePreOrder(Node parent)
+        public static String TraversePreOrder(Node parent)
         {
 
             return (TraversePreOrder(parent, "["))+"]";
 
         }
 
-        private String TraversePreOrder(Node parent, String result)
+        private static String TraversePreOrder(Node parent, String result)
         {
             if (parent != null)
             {
                 result+=parent.Data + "-->";
-                result+=TraversePreOrder(parent.LeftNode, result);
-                result+=TraversePreOrder(parent.RightNode, result);
+                result+=TraversePreOrder(parent.Left, result);
+                result+=TraversePreOrder(parent.Right, result);
             }
             return result;
         }
 
-        public String TraverseInOrder(Node parent)
+        public static String TraverseInOrder(Node parent)
         {
 
             return (TraverseInOrder(parent, "["))+"]";
 
         }
 
-        private String TraverseInOrder(Node parent, String result)
+        private static String TraverseInOrder(Node parent, String result)
         {
             if (parent != null)
             {
-                result+=TraverseInOrder(parent.LeftNode);
+                result+=TraverseInOrder(parent.Left);
                 result+=parent.Data + "-->";
-                result+=TraverseInOrder(parent.RightNode);
+                result+=TraverseInOrder(parent.Right);
             }
 
             return result;
         }
 
-        public String TraversePostOrder(Node parent)
+        public static String TraversePostOrder(Node parent)
         {
 
             return (TraversePostOrder(parent, "["))+"]";
 
         }
 
-        private void TraversePostOrder(Node parent, String result)
+        private static String TraversePostOrder(Node parent, String result)
         {
             if (parent != null)
             {
-                result+=TraversePostOrder(parent.LeftNode);
-                result+=TraversePostOrder(parent.RightNode);
+                result+=TraversePostOrder(parent.Left, result);
+                result+=TraversePostOrder(parent.Right, result);
                 result+=parent.Data + "-->";
             }
+            return result;
+        }
+
+
+        public static String toString()
+        {
+            return toString("",true,"",Root);
+        }
+
+        public static String toString(String prefix, Boolean isTail, String sb, Node head)
+        {
+            if (head.Right != null)
+            {
+                sb += toString(prefix + (isTail ? "│   " : "    "), false, "", head.Right);
+            }
+
+            sb += prefix + (isTail ? "└──" : "┌──") + "[" + head.Data + "]" + "\n";
+
+            if (head.Left != null)
+            {
+                sb += toString(prefix + (isTail ? "    " : "│   "), true, "", head.Left);
+            }
+            return sb;
         }
 
     }
