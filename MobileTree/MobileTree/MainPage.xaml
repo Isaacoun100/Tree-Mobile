@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileTree.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+            <Button x:Name="prueba1" Text="pre orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="pre_Clicked"/>
+            <Button x:Name="prueba2" Text="in orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="In_Clicked"/>
+            <Button x:Name="prueba3" Text="post orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="post_Clicked"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0" Padding="0" BackgroundColor="White" BorderColor="Black" WidthRequest="400" HeightRequest="400" >
+                <Label x:Name="label1" Text="Primer label" HorizontalTextAlignment="Center"  LineBreakMode="WordWrap"/>
+            </Frame>
+            <Entry x:Name="entry1" Placeholder="Escriba un numero aqui" Keyboard="Numeric" />
+            <Button x:Name="escribir" Text="Ejemplo" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="Ejemplo_Clicked" />
+
+            <Frame HeightRequest="70" WidthRequest="70" CornerRadius="70" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0" Padding="0" BackgroundColor="#D1B6FF" BorderColor="Black">
+                <Label Text="N1" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </Frame>
+
+
+        </StackLayout>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
