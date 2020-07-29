@@ -88,10 +88,10 @@ namespace MobileTree.Data_Structures
             return parent;
         }
 
-        public static String TraversePreOrder(Node parent)
+        public static String TraversePreOrder()
         {
 
-            return (TraversePreOrder(parent, "["))+"]";
+            return (TraversePreOrder(Root, "["))+"]";
 
         }
 
@@ -100,16 +100,16 @@ namespace MobileTree.Data_Structures
             if (parent != null)
             {
                 result+=parent.Data + "-->";
-                result+=TraversePreOrder(parent.Left, result);
-                result+=TraversePreOrder(parent.Right, result);
+                result+=TraversePreOrder(parent.Left, "");
+                result+=TraversePreOrder(parent.Right, "");
             }
             return result;
         }
 
-        public static String TraverseInOrder(Node parent)
+        public static String TraverseInOrder()
         {
 
-            return (TraverseInOrder(parent, "["))+"]";
+            return (TraverseInOrder(Root, "["))+"]";
 
         }
 
@@ -117,18 +117,18 @@ namespace MobileTree.Data_Structures
         {
             if (parent != null)
             {
-                result+=TraverseInOrder(parent.Left);
+                result+=TraverseInOrder(parent.Left, "");
                 result+=parent.Data + "-->";
-                result+=TraverseInOrder(parent.Right);
+                result+=TraverseInOrder(parent.Right, "");
             }
 
             return result;
         }
 
-        public static String TraversePostOrder(Node parent)
+        public static String TraversePostOrder()
         {
 
-            return (TraversePostOrder(parent, "["))+"]";
+            return (TraversePostOrder(Root, "["))+"]";
 
         }
 
@@ -136,8 +136,8 @@ namespace MobileTree.Data_Structures
         {
             if (parent != null)
             {
-                result+=TraversePostOrder(parent.Left, result);
-                result+=TraversePostOrder(parent.Right, result);
+                result+=TraversePostOrder(parent.Left, "");
+                result+=TraversePostOrder(parent.Right, "");
                 result+=parent.Data + "-->";
             }
             return result;

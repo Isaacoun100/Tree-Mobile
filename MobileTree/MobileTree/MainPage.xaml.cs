@@ -31,19 +31,19 @@ namespace MobileTree
 
         public void post_Clicked(object sender, EventArgs e)
         {
-            label1.Text = "YO HAGO EL POST";
+            label1.Text = BinaryTree.TraversePostOrder();
 
         }
 
         public void pre_Clicked(object sender, EventArgs e)
         {
-            label1.Text = "YO HAGO EL PRE";
+            label1.Text = BinaryTree.TraversePreOrder();
         }
 
 
         public void In_Clicked(object sender, EventArgs e)
         {
-            label1.Text = "YO HAGO EL IN";
+            label1.Text = BinaryTree.TraverseInOrder();
         }
 
     }
