@@ -10,9 +10,9 @@
             
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
             
-            <Button x:Name="prueba1" Text="pre orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="pre_Clicked"/>
-            <Button x:Name="prueba2" Text="in orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="In_Clicked"/>
-            <Button x:Name="prueba3" Text="post orden" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="post_Clicked"/>
+            <Button x:Name="prueba1" Text="Pre-Order" WidthRequest="100" HeightRequest="50"  BackgroundColor="Cyan"  Clicked="pre_Clicked"/>
+            <Button x:Name="prueba2" Text="In-Order" WidthRequest="100" HeightRequest="50"  BackgroundColor="Cyan" Clicked="In_Clicked"/>
+            <Button x:Name="prueba3" Text="Post-Order" WidthRequest="100" HeightRequest="50"  BackgroundColor="Cyan" Clicked="post_Clicked"/>
             
         </StackLayout>
 
@@ -20,12 +20,13 @@
             
             <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0" Padding="0" BackgroundColor="White" BorderColor="Black" WidthRequest="400" HeightRequest="400" >
                 
-                <Label x:Name="label1" Text="Primer label" HorizontalTextAlignment="Start"  LineBreakMode="WordWrap" FontSize="Large" />
+                <Label x:Name="label1" Text="Please add a node or toggle random mode" HorizontalTextAlignment="Start"  LineBreakMode="WordWrap" FontSize="Large" />
                 
             </Frame>
             
-            <Entry x:Name="entry1" Placeholder="Escriba un numero aqui" Keyboard="Numeric" />
-            <Button x:Name="escribir" Text="Ejemplo" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="Ejemplo_Clicked" />
+            <Entry x:Name="entry1" Placeholder="Please write a number" Keyboard="Numeric" />
+            <Button x:Name="random" Text="Random" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="RandomMode" />
+            <Button x:Name="add" Text="Add new node" WidthRequest="100" HeightRequest="50"  BackgroundColor="Aqua" Clicked="Ejemplo_Clicked" />
 
 
         </StackLayout>

@@ -21,11 +21,7 @@ namespace MobileTree
 
         public void Ejemplo_Clicked(object sender, EventArgs e)
         {
-            BinaryTree.Add(7);
-            BinaryTree.Add(8);
-            BinaryTree.Add(6);
-            BinaryTree.Add(9);
-            BinaryTree.Add(5);
+            BinaryTree.Add(int.Parse(entry1.Text));
             label1.Text = BinaryTree.toString();
         }
 
@@ -44,6 +40,11 @@ namespace MobileTree
         public void In_Clicked(object sender, EventArgs e)
         {
             label1.Text = BinaryTree.TraverseInOrder();
+        }
+
+        public void RandomMode(object sender, EventArgs e)
+        {
+
         }
 
     }
