@@ -10,6 +10,15 @@ namespace MobileTree.Data_Structures
 
         public static Node Root { get; set; }
 
+        
+        public static void AddRandom(int n){
+            for(int i = 0; i < n; i++){
+                Random random = new Random();
+                int number = random.Next(0,50);
+                Add(number);
+            }
+        }
+
         public static bool Add(int value)
         {
             Node before = null; 
